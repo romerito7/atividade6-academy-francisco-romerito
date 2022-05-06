@@ -23,3 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+const { loginPage } = require("./pages/LoginPage.po");
+
+Cypress.Commands.add("clicarPorTexto", (seletor, texto) => {
+    cy.contains(seletor, texto).click();
+});
+
+Cypress.Commands.add("login", (email, senha) => {
+    loginPage.preencherFormularioELogar(email, senha);
+});
+
+Cypress.Commands.add("mockarUsuario", () => {
+    cy.fixture("usuario.json").then((informacoesUsuario) => {
+        window.localStorage.setItem(informacoesUsuario.email, JSON.stringify(informacoesUsuario));
+    })
+});

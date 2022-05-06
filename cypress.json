@@ -1,4 +1,9 @@
 {
     "baseUrl": "https://bugbank.netlify.app",
-    "testFiles": "**/*.feature"
+    "testFiles": "**/*.feature",
+    "env": {
+        "TAGS": "not @ignore"
+    },
+    "video": false,
+    "projectId": "pknehv"
 }

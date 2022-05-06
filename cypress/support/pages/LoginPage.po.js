@@ -16,7 +16,7 @@ class LoginPage {
     }
 
     clicarEmAcessar() {
-        cy.contains("button", "Acessar").click();
+        cy.clicarPorTexto("button", "Acessar");
     }
 
     preencherFormularioELogar(email, senha) {
