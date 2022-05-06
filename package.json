@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-result": "npx cypress run --record --key 9d11716c-6996-4207-89c9-ae185f6e6df8",
+    "test-result": "npx cypress run --record --key SUA_CHAVE_GRAVACAO",
     "open": "npx cypress open",
     "test": "npx cypress run"
   },
