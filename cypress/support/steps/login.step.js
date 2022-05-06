@@ -1,7 +1,7 @@
 import { loginPage } from "../pages/LoginPage.po";
 
 Given("acessei a tela de login", () => {
-    // loginPage.visitar();
+    loginPage.visitar();
 });
 
 When("informo os dados do usuário inexistente", (tabela) => {
