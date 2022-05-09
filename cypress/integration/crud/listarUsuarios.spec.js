@@ -1,4 +1,4 @@
-import { listaPage } from "../../support/pages/crud/ListaPage.po";
+import { listarUsuarios } from "../../support/pages/crud/listarUsuarios.po";
 
 describe("Consultar lista de usuários cadastrados", () => {
     it("Deve ser possível visualizar um usuário na lista", () => {

@@ -1,7 +1,6 @@
 import { loginPage } from "../pages/LoginPage.po";
 
 beforeEach(() => {
-    cy.viewport("iphone-6");
     cy.mockarUsuario();
 });
 
