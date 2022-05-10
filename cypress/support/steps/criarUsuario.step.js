@@ -1,7 +1,7 @@
 import {criarUsuario} from "../pages/crud/criarUsuario.po"
 
 
-before(() => {
+beforeEach(() => {
     cy.intercept("https://crud-api-academy.herokuapp.com/api/v1/users", {statusCode: 200, body:[
         {
             id: "2996b2a3-ff34-4dd9-a66c-89a8077fa8e6",
@@ -20,16 +20,23 @@ before(() => {
         },
 
 
-    ]});
+    ]})
+
+    
 
 
 });
+
+
+
+
 
 Given("acessei a pagina inicial", () => {
     criarUsuario.visitar();
 });
 
 And("Clico no link novo", () => {
+   
     criarUsuario.clicarNovo();
 });
 

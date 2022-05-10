@@ -24,8 +24,8 @@ Scenario: Atualizando um usuario com email inválido
     
 Scenario: Atualizando um usuario com email existente
     When informo os dados de nome e email
-        | nome  | nome Novo |
-        | email | 1234@123.com  |
+        | nome  | nome Novo             |
+        | email | romerito@example.com  |
     Then visualizo a mensagem de erro "Este e-mail já é utilizado por outro usuário."
 
 
