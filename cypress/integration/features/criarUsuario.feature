@@ -24,8 +24,8 @@ Scenario:Cadastrar usuario com e-mail invalido
 
 Scenario:Cadastrar usuario com e-mail existente
     When informo nome e um email existente
-    | nome  | asdf          |
-    | email | 1234@123.com  |
+    | nome  | asdf                  |
+    | email | romerito@example.com  |
     Then visualizo a mensagem de erro "Este e-mail já é utilizado por outro usuário."
 
 Scenario:Cadastrar usuario com mais de 100 caracteres
