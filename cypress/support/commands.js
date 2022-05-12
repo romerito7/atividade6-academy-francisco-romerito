@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-const { loginPage } = require("./pages/LoginPage.po");
+//const { loginPage } = require("./pages/LoginPage.po");
 
 Cypress.Commands.add("clicarPorTexto", (seletor, texto) => {
     cy.contains(seletor, texto).click();

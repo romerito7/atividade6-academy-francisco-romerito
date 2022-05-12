@@ -9,10 +9,11 @@ Background:Acessar a pagina de criar usuario
     And Clico no link novo
 
 Scenario: Deve ser possivel cadastrar um usuário
-    When informo os dados do usuário inexistente
+    When informo os dados do usuário novo
         | nome  | nome inexistente |
         | email | email@email.com  |
-    Then clico em salvar    
+    Then clico em salvar 
+    Then visualizo a confirmacao 
     
 
 Scenario:Cadastrar usuario com e-mail invalido

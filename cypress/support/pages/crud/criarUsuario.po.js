@@ -5,7 +5,7 @@ class CriarUsuario {
     inputNome = "input[name='name']";
     inputEmail = "input[name='email']";
     botaoSalvar = "Salvar";
-    
+    random = (Date.now());
     
     visitar() {
         cy.visit("https://academy-crud-frontend.herokuapp.com/users");
@@ -24,6 +24,12 @@ class CriarUsuario {
         
 
     }
+    preencherCamposNovo(nome,email){
+        cy.get(this.inputNome).type('{selectall}{backspace}').type(nome);
+        cy.get(this.inputEmail).type('{selectall}{backspace}').type(this.random+email);
+        
+
+    }
 
     clicarSalvar(){
 
@@ -34,6 +40,12 @@ class CriarUsuario {
     verificaErro(mensagemErro){
 
         cy.contains(mensagemErro).should("be.visible");
+
+
+    }
+
+    confirmacao(){
+        cy.contains("Usuário salvo com sucesso!").should("be.visible");
 
 
     }

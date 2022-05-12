@@ -10,10 +10,11 @@ Background: Acessar a tela de atualizar usuario
     Then clico no botao editar
 
 Scenario: Atualizando um usuario
-    When informo os dados de nome e email
-        | nome  | nome Novo |
+    When informo os dados de nome e um email novo
+        | nome  | nome Novo            |
         | email | emailNovo@email.com  |
-    Then clico no botao salvar
+    And clico no botao salvar
+    Then visualizo a confirmacao de alteracao
 
     
 Scenario: Atualizando um usuario com email inválido
@@ -23,9 +24,9 @@ Scenario: Atualizando um usuario com email inválido
     Then visualizo a mensagem de erro "Formato de e-mail inválido"
     
 Scenario: Atualizando um usuario com email existente
-    When informo os dados de nome e email
+    When informo os dados de nome e email existente
         | nome  | nome Novo             |
-        | email | romerito@example.com  |
+        | email | emailNovo@email.com  |
     Then visualizo a mensagem de erro "Este e-mail já é utilizado por outro usuário."
 
 

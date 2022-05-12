@@ -2,9 +2,9 @@
 class ExcluirUsuario {
 
 
-    botaoExcluir = '.sc-kgflAQ.vggQs' 
+    botaoExcluir = ':nth-child(1) > .sc-dmRaPn > [data-test="userDataDelete"]' 
     botaoComfirmar = "Confirmar"
-    confirmacaoExclusao = ".go3958317564"
+    
 
     visitar() {
         cy.visit("https://academy-crud-frontend.herokuapp.com/users");

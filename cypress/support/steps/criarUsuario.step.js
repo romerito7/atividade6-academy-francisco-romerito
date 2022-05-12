@@ -1,8 +1,7 @@
 import {criarUsuario} from "../pages/crud/criarUsuario.po"
 
-
 beforeEach(() => {
-    cy.intercept("https://crud-api-academy.herokuapp.com/api/v1/users", {statusCode: 200, body:[
+    cy.intercept("https://crud-api-academy.herokuapp.com/api/v1/users", {method: 'POST',statusCode: 201, body:[
         {
             id: "2996b2a3-ff34-4dd9-a66c-89a8077fa8e6",
             name: "Romerito",
@@ -20,14 +19,10 @@ beforeEach(() => {
         },
 
 
-    ]})
-
-    
+    ]});
 
 
 });
-
-
 
 
 
@@ -36,14 +31,18 @@ Given("acessei a pagina inicial", () => {
 });
 
 And("Clico no link novo", () => {
-   
     criarUsuario.clicarNovo();
 });
 
-When("informo os dados do usuário inexistente", (tabela) => {
+When("informo os dados do usuário novo", (tabela) => {
     var dadosTabela = tabela.rowsHash();
-    criarUsuario.preencherCampos(dadosTabela.nome, dadosTabela.email);
+    criarUsuario.preencherCamposNovo(dadosTabela.nome, dadosTabela.email);
 });
+
+Then("visualizo a confirmacao", () => {
+    criarUsuario.confirmacao();
+});
+
 
 Then("clico em salvar", () => {
     criarUsuario.clicarSalvar();
@@ -66,6 +65,8 @@ Then("visualizo a mensagem de erro {string}", (mensagemErro) => {
 });
 
 When("informo nome e um email existente", (tabela) => {
+    cy.intercept("https://crud-api-academy.herokuapp.com/api/v1/users", {method: 'POST',statusCode: 422, body:{"error":"User already exists."}});
+
     var dadosTabela = tabela.rowsHash();
     criarUsuario.preencherCampos(dadosTabela.nome, dadosTabela.email);
 });
